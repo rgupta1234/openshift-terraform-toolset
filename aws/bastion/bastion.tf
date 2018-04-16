@@ -22,6 +22,7 @@ resource "aws_instance" "bastion" {
       "sudo /usr/sbin/subscription-manager repos --disable=\"*\"",
       "sudo /usr/sbin/subscription-manager repos --enable=\"rhel-7-server-rpms\" --enable=\"rhel-7-server-extras-rpms\" --enable=\"rhel-7-server-ose-3.9-rpms\" --enable=\"rhel-7-fast-datapath-rpms\" --enable=\"rhel-7-server-ansible-2.4-rpms\"",
       "sudo /usr/bin/yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct atomic-openshift-utils",
+      "git clone https://github.com/robertsandoval/openshift-install-toolset.git"
     ]
   }
   connection {
@@ -30,8 +31,9 @@ resource "aws_instance" "bastion" {
     private_key = "${file(var.private_key_path)}"
   }
 
-  provisioner "local-exec" {
-    command = "scp -i ${file(var.private_key_path)} ec2-user@${aws_instance.bastion.private_ip}:~"
+  provisioner "file" {
+    source = "${var.private_key_path}"
+    destination = "/home/ec2-user/ec2-user.pem"
   }
 
   tags {
