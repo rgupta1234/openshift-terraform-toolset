@@ -34,11 +34,25 @@ resource "aws_instance" "nodes" {
       "sudo /usr/bin/yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct atomic-openshift-utils  docker-1.13.1",
     ]
   }
+
+  provisioner "file" {
+    source = "../../files/docker-storage-setup"
+    destination = "/home/ec2-user/docker-storage-setup"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo cp /home/ec2-user/docker-storage-setup /etc/sysconfig/docker-storage-setup",
+      "sudo /usr/bin/docker-storage-setup",
+    ]
+  }
+
   connection {
     type     = "ssh"
     user     = "ec2-user"
     private_key = "${file(var.private_key_path)}"
   }
+
 
   tags {
     Name = "${var.subdomain}-node-${count.index + 1 }"

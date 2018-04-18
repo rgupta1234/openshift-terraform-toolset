@@ -1,0 +1,4 @@
+DEVS=/dev/xvdb
+VG=docker-vg
+DATA_SIZE=99%FREE
+WIPE_SIGNATURES=true
