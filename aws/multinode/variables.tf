@@ -1,6 +1,6 @@
 variable "key_name" {
   description = "AWS Keyname"
-  default = "sandoval-aws"
+  default = "gupta"
 }
 variable "ami" {
   description = "ami image"
@@ -8,15 +8,15 @@ variable "ami" {
 }
 variable "private_key_path" {
   description = "AWS Keyname"
-  default = "/root/aws/sandoval-aws.pem"
+  default = "/Users/rgupta/Documents/openshift/INSTALLS/key/gupta.pem"
 }
 variable "security_group" {
   description = "Security Group"
-  default = "sandoval-sg"
+  default = "default"
 }
 variable "rhn_username" {
   description = "RHN username"
-  default = "rsandova@redhat.com"
+  default = "rgupta@redhat.com"
 }
 variable "rhn_password" {
   description = "RHN password"
@@ -26,11 +26,11 @@ variable "rhn_pool" {
 }
 variable "domain" {
   description = "Route53 hosted domain"
-  default = "demo.osecloud.com"
+  default = "rg.osecloud.com"
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "ocp"
+  default = "rgworkshop"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
