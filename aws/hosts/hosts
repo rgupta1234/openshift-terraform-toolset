@@ -18,6 +18,8 @@ ansible_become=yes
 openshift_deployment_type=openshift-enterprise
 openshift_release_version=3.9.14
 openshift_clock_enabled=true
+# Auditing
+#openshift_master_audit_config_enabled=true
 
 # Network/DNS Related
 openshift_master_default_subdomain=apps.workshop.osecloud.com
