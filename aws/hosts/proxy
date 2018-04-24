@@ -1,0 +1,3 @@
+#openshift_http_proxy=http://192.168.0.254:3128
+#openshift_https_proxy=http://192.168.0.254:3128
+#openshift_no_proxy=

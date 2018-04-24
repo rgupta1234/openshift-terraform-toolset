@@ -1,0 +1,11 @@
+# Logging deployment
+#
+openshift_logging_install_logging=true
+openshift_logging_storage_volume_size=10G
+openshift_logging_es_pvc_dynamic=true
+openshift_logging_es_pvc_storage_class_name="glusterfs-storage-block"
+openshift_logging_es_memory_limit=4G
+openshift_logging_kibana_nodeselector={'region':'infra'}
+openshift_logging_curator_nodeselector={'region':'infra'}
+openshift_logging_es_nodeselector={'region':'infra'}
+#openshift_logging_fluentd_nodeselector=''
