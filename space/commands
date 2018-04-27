@@ -1,0 +1,3 @@
+ansible "*" -a "df -h"
+ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/byo/openshift-cluster/openshift-logging.yml -e openshift_logging_install_logging=false
+
