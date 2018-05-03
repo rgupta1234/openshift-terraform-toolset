@@ -30,7 +30,7 @@ variable "domain" {
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "rgworkshop"
+  default = "lab"
 }
 variable "create_nfs" { 
   description = "Create NFS server"

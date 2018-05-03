@@ -18,7 +18,7 @@ resource "aws_instance" "bastion" {
       "sudo /usr/sbin/subscription-manager repos --disable=\"*\"",
       "sudo /usr/sbin/subscription-manager repos --enable=\"rhel-7-server-rpms\" --enable=\"rhel-7-server-extras-rpms\" --enable=\"rhel-7-server-ose-3.9-rpms\" --enable=\"rhel-7-fast-datapath-rpms\" --enable=\"rhel-7-server-ansible-2.4-rpms\" ",
       "sudo /usr/bin/yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct atomic-openshift-utils",
-      "git clone https://github.com/robertsandoval/openshift-install-toolset.git"
+      "git clone https://github.com/rgupta1234/openshift-install-toolset.git"
     ]
   }
   connection {
