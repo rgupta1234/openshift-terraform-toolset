@@ -32,25 +32,25 @@ openshift_docker_insecure_registries=172.30.0.0/16
 openshift_hosted_manage_router=true
 openshift_hosted_router_selector='region=infra'
 
-# registry
-openshift_hosted_registry_replicas=3       
-openshift_registry_selector="role=infra"   
-openshift_hosted_registry_storage_kind=glusterfs 
-openshift_hosted_registry_storage_volume_size=25Gi  
+# CNS Storage
+openshift_storage_glusterfs_namespace=storage
+openshift_storage_glusterfs_storageclass=true
+openshift_storage_glusterfs_storageclass_default=true
+openshift_storage_glusterfs_block_deploy=true
+openshift_storage_glusterfs_block_host_vol_size=100
+openshift_storage_glusterfs_block_storageclass=true
+openshift_storage_glusterfs_block_storageclass_default=false
+openshift_storage_glusterfs_heketi_wipe=True
+openshift_storage_glusterfs_wipe=True
 
-# CNS storage for applications
-openshift_storage_glusterfs_namespace=app-storage
-openshift_storage_glusterfs_block_deploy=false    
-
-# CNS storage for OpenShift infrastructure
-openshift_storage_glusterfs_registry_namespace=infra-storage  
-openshift_storage_glusterfs_registry_storageclass=false       
-openshift_storage_glusterfs_registry_block_deploy=true   
-openshift_storage_glusterfs_registry_block_host_vol_create=true    
-openshift_storage_glusterfs_registry_block_host_vol_size=100   
-openshift_storage_glusterfs_registry_block_storageclass=true
-openshift_storage_glusterfs_registry_block_storageclass_default=true
 openshift_storageclass_default=false
+
+# Registry Storage
+#
+openshift_hosted_manage_registry=true
+openshift_hosted_registry_storage_kind=glusterfs
+openshift_hosted_registry_storage_volume_name=registry
+openshift_hosted_registry_storage_volume_size=50Gi
 
 # Disble Checks
 openshift_disable_check=disk_availability,memory_availability,package_availability,docker_image_availability,docker_storage,package_version
@@ -143,15 +143,15 @@ ip-172-31-37-137.us-east-2.compute.internal openshift_ip=172.31.37.137
 
 # host group for nodes, includes region info
 [nodes]
-ip-172-31-37-137.us-east-2.compute.internal openshift_ip=172.31.37.137 openshift_node_labels="{'region': 'infra', 'zone': 'm1', 'role': 'masterr'}"
-ip-172-31-10-165.us-east-2.compute.internal openshift_ip=172.31.10.165 openshift_node_labels="{'region': 'primary', 'zone': 'a1', 'role': 'compute'}"
-ip-172-31-0-63.us-east-2.compute.internal openshift_ip=172.31.0.63 openshift_node_labels="{'region': 'primary', 'zone': 'a2', 'role': 'compute'}"
-ip-172-31-4-64.us-east-2.compute.internal openshift_ip=172.31.4.64 openshift_node_labels="{'region': 'primary', 'zone': 'a3', 'role': 'compute'}"
+ip-172-31-37-137.us-east-2.compute.internal openshift_ip=172.31.37.137 openshift_node_labels="{'region': 'infra', 'zone': 'm1'}"
+ip-172-31-44-7.us-east-2.compute.internal openshift_ip=172.31.44.7 openshift_node_labels="{'region': 'primary', 'zone': 'a1'}"
+ip-172-31-46-126.us-east-2.compute.internal openshift_ip=172.31.46.126 openshift_node_labels="{'region': 'primary', 'zone': 'a2'}"
+ip-172-31-35-186.us-east-2.compute.internal openshift_ip=172.31.35.186 openshift_node_labels="{'region': 'primary', 'zone': 'a3'}"
 
 [glusterfs]
 # "standalone" glusterfs nodes STILL need to be in the "[nodes]" section
-ip-172-31-10-165.us-east-2.compute.internal glusterfs_ip=172.31.10.165 glusterfs_zone=1 glusterfs_devices='[ "/dev/xvdc" ]'
-ip-172-31-0-63.us-east-2.compute.internal glusterfs_ip=172.31.0.63 glusterfs_zone=2 glusterfs_devices='[ "/dev/xvdc" ]'
-ip-172-31-4-64.us-east-2.compute.internal glusterfs_ip=172.31.4.64 glusterfs_zone=3 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-44-7.us-east-2.compute.internal glusterfs_ip=172.31.44.7 glusterfs_zone=1 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-46-126.us-east-2.compute.internal glusterfs_ip=172.31.46.126 glusterfs_zone=2 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-35-186.us-east-2.compute.internal glusterfs_ip=172.31.35.186 glusterfs_zone=3 glusterfs_devices='[ "/dev/xvdc" ]'
 ##
 ##
