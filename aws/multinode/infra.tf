@@ -23,7 +23,7 @@ resource "aws_instance" "infras" {
       "sudo /usr/sbin/subscription-manager register --username ${var.rhn_username} --password ${var.rhn_password}",
       "sudo /usr/sbin/subscription-manager attach --pool=${var.rhn_pool}",
       "sudo /usr/sbin/subscription-manager repos --disable=\"*\"",
-      "sudo /usr/sbin/subscription-manager repos --enable=\"rhel-7-server-rpms\" --enable=\"rhel-7-server-extras-rpms\" --enable=\"rhel-7-server-ose-3.9-rpms\" --enable=\"rhel-7-fast-datapath-rpms\" --enable=\"rhel-7-server-ansible-2.4-rpms\"",
+      "sudo /usr/sbin/subscription-manager repos --enable=\"rh-gluster-3-for-rhel-7-server-rpms\" --enable=\"rhel-7-server-rpms\" --enable=\"rhel-7-server-extras-rpms\" --enable=\"rhel-7-server-ose-3.9-rpms\" --enable=\"rhel-7-fast-datapath-rpms\" --enable=\"rhel-7-server-ansible-2.4-rpms\"",
       "sudo /usr/bin/yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct atomic-openshift-utils  docker-1.13.1",
     ]
   }
