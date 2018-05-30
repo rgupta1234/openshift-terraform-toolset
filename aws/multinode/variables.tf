@@ -20,9 +20,11 @@ variable "rhn_username" {
 }
 variable "rhn_password" {
   description = "RHN password"
+  default = "Roger12,"
 }
 variable "rhn_pool" {
   description = "Pool ID to attach to"
+  default = "8a85f98b6200c40c0162016c23aa0b53"
 }
 variable "domain" {
   description = "Route53 hosted domain"
@@ -30,7 +32,7 @@ variable "domain" {
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "rhlab"
+  default = "rhlabliquide"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
@@ -62,7 +64,7 @@ variable "node" {
     instance_type = "m4.xlarge"
     root_volume_size = 30
     docker_volume_size = 50
-    cns_volume_size = 100
+    cns_volume_size = 500
   }
 }
 variable "nfs" {
