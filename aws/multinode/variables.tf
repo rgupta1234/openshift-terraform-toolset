@@ -32,7 +32,7 @@ variable "domain" {
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "rhny"
+  default = "workshop"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
@@ -60,7 +60,7 @@ variable "infra" {
 variable "node" {
   description = "Node configurations"
   default = {
-    count = 3
+    count = 5 
     instance_type = "m4.xlarge"
     root_volume_size = 30
     docker_volume_size = 50

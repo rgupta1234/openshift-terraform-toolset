@@ -20,9 +20,6 @@ resource "aws_instance" "infras" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo rm /etc/yum.repos.d/*load*",
-      "sudo /usr/sbin/subscription-manager unregister",
-      "sudo /usr/sbin/subscription-manager clean",
       "sudo /usr/sbin/subscription-manager refresh",
       "sudo /usr/sbin/subscription-manager register --username ${var.rhn_username} --password ${var.rhn_password}",
       "sudo /usr/sbin/subscription-manager attach --pool=${var.rhn_pool}",
