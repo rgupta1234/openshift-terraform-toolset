@@ -71,7 +71,7 @@ variable "nfs" {
   description = "NFS configurations"
   default = {
     count = 0
-    instance_type = "m4.2xlarge"
+    instance_type = "m4.4xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     nfs_volume_size = 100

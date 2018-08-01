@@ -1,7 +1,7 @@
 resource "aws_instance" "infras" {
   count = "${var.infra["count"]}"
   ami           = "ami-0b1e356e"
-  instance_type = "m4.2xlarge"
+  instance_type = "m4.4xlarge"
   key_name = "${var.key_name}"
   security_groups  = ["${var.security_group}"]
 
