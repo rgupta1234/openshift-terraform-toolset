@@ -32,7 +32,7 @@ variable "domain" {
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "workshop"
+  default = "wshop"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
@@ -42,7 +42,7 @@ variable "master" {
   description = "Master configurations"
   default = {
     count = 1
-    instance_type = "m4.xlarge"
+    instance_type = "m4.4xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     nfs_volume_size = 100
@@ -54,14 +54,14 @@ variable "infra" {
     count = 0
     root_volume_size = 30
     docker_volume_size = 50
-    instance-type = "m4.xlarge"
+    instance-type = "m4.4xlarge"
   }
 }
 variable "node" {
   description = "Node configurations"
   default = {
     count = 5 
-    instance_type = "m4.xlarge"
+    instance_type = "m4.4xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     cns_volume_size = 500
@@ -71,7 +71,7 @@ variable "nfs" {
   description = "NFS configurations"
   default = {
     count = 0
-    instance_type = "m4.xlarge"
+    instance_type = "m4.2xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     nfs_volume_size = 100
