@@ -134,26 +134,26 @@ openshift_master_htpasswd_users={'developer': '$apr1$q2fVVf46$85HP/4JHGYeFBKAKPB
 
 # host group for etcd
 [etcd]
-ip-172-31-14-183.us-east-2.compute.internal
+p-172-31-34-117.us-east-2.compute.internal
 # host group for loadbalancers
 #[lb]
 #ocp.cloud.chx
 
 # host group for masters - set scedulable to "true" for the web-console pod
 [masters]
-ip-172-31-14-183.us-east-2.compute.internal openshift_ip=172.31.14.183
+ip-172-31-34-117.us-east-2.compute.internal openshift_ip=172.31.34.117
 
 # host group for nodes, includes region info
 [nodes]
-ip-172-31-14-183.us-east-2.compute.internal openshift_public_ip=18.222.104.47 openshift_ip=172.31.14.183 openshift_node_labels="{'region': 'infra', 'zone': 'm1'}"
-ip-172-31-15-34.us-east-2.compute.internal openshift_ip=172.31.15.34 openshift_node_labels="{'region': 'primary', 'zone': 'a1'}"
-ip-172-31-12-21.us-east-2.compute.internal openshift_ip=172.31.12.21 openshift_node_labels="{'region': 'primary', 'zone': 'a2'}"
-ip-172-31-11-180.us-east-2.compute.internal openshift_ip=172.31.11.180 openshift_node_labels="{'region': 'primary', 'zone': 'a3'}"
+ip-172-31-34-117.us-east-2.compute.internal openshift_public_ip=18.188.236.254 openshift_ip=172.31.34.117 openshift_node_labels="{'region': 'infra', 'zone': 'm1'}"
+ip-172-31-43-241.us-east-2.compute.internal openshift_ip=172.31.43.241 openshift_node_labels="{'region': 'primary', 'zone': 'a1'}"
+ip-172-31-34-86.us-east-2.compute.internal openshift_ip=172.31.34.86 openshift_node_labels="{'region': 'primary', 'zone': 'a2'}"
+ip-172-31-37-213.us-east-2.compute.internal openshift_ip=172.31.37.213 openshift_node_labels="{'region': 'primary', 'zone': 'a3'}"
 
 [glusterfs]
 # "standalone" glusterfs nodes STILL need to be in the "[nodes]" section
-ip-172-31-15-34.us-east-2.compute.internal glusterfs_ip=172.31.15.34 glusterfs_zone=1 glusterfs_devices='[ "/dev/xvdc" ]'
-ip-172-31-12-21.us-east-2.compute.internal glusterfs_ip=172.31.12.21 glusterfs_zone=2 glusterfs_devices='[ "/dev/xvdc" ]'
-ip-172-31-11-180.us-east-2.compute.internal glusterfs_ip=172.31.11.180 glusterfs_zone=3 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-43-241.us-east-2.compute.internal glusterfs_ip=172.31.43.241 glusterfs_zone=1 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-34-86.us-east-2.compute.internal glusterfs_ip=172.31.34.86 glusterfs_zone=2 glusterfs_devices='[ "/dev/xvdc" ]'
+ip-172-31-37-213.us-east-2.compute.internal glusterfs_ip=172.31.37.213 glusterfs_zone=3 glusterfs_devices='[ "/dev/xvdc" ]'
 ##
 ##
