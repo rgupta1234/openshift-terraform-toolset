@@ -28,11 +28,11 @@ variable "rhn_pool" {
 }
 variable "domain" {
   description = "Route53 hosted domain"
-  default = "rg.osecloud.com"
+  default = "workshop.osecloud.com"
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "310"
+  default = "tues"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
