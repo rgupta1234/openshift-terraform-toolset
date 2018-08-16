@@ -28,11 +28,15 @@ variable "rhn_pool" {
 }
 variable "domain" {
   description = "Route53 hosted domain"
-  default = "rg.osecloud.com"
+  default = "gupta.osecloud.com"
 }
 variable "subdomain" {
   description = "Subdomain to use for this event"
-  default = "wshop"
+  default = "apps"
+}
+variable "prefix" {
+  description = "prefix use for this event"
+  default = "bnsf"
 }
 variable "create_nfs" { 
   description = "Create NFS server"
@@ -42,7 +46,7 @@ variable "master" {
   description = "Master configurations"
   default = {
     count = 1
-    instance_type = "m4.4xlarge"
+    instance_type = "m4.xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     nfs_volume_size = 100
@@ -54,14 +58,14 @@ variable "infra" {
     count = 0
     root_volume_size = 30
     docker_volume_size = 50
-    instance-type = "m4.4xlarge"
+    instance-type = "m4.xlarge"
   }
 }
 variable "node" {
   description = "Node configurations"
   default = {
     count = 5 
-    instance_type = "m4.4xlarge"
+    instance_type = "m4.xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     cns_volume_size = 500
@@ -71,7 +75,7 @@ variable "nfs" {
   description = "NFS configurations"
   default = {
     count = 0
-    instance_type = "m4.4xlarge"
+    instance_type = "m4.xlarge"
     root_volume_size = 30
     docker_volume_size = 50
     nfs_volume_size = 100
